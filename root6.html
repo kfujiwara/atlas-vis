@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atlas Data Viewer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" />
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<div id="container">
+<div id="map"> </div>
+<div id="controls">
+  <div>
+    <canvas id="legend" width="200" height="16"></canvas>
+  </div>
+  <div id="slabel"></div>
+  <div>
+    <input id="sinput" type="range" min="10" max="500" list="sticks"/>
+  </div>
+  <div id="multi" style="display: none">
+    <br/>
+    <div id="rlabel"></div>
+    <div>
+      <input id="rinput" type="range" min="1" max="13" list="rticks"/>
+    </div>
+    <div id="llabel">or by Root Letter</div>
+    <select id="letter">
+      <option value="">- all -</option>
+    </select>
+  </div>
+  <div id="sclabel" style="display: none">by site code</div>
+  <select id="site" style="display: none">
+    <option value="">- all -</option>
+  </select>
+</div>
+<div id="key">
+</div>
+<div id="progress" style="display: none"> <div class="overlay"> </div> </div>
+<div id="pending" style="display: none"> </div>
+<div id="info">
+  <div id="meta"> </div>
+  <div id="measurements"> </div>
+</div>
+</div>
+<datalist id="rticks"> </datalist>
+<datalist id="sticks">
+  <option value="10">
+  <option value="50">
+  <option value="100">
+  <option value="150">
+  <option value="200">
+  <option value="250">
+  <option value="300">
+  <option value="400">
+  <option value="500">
+</datalist>
+</body>
+<script src="https://code.jquery.com/jquery-2.1.4.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"> </script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+<script src="js/main.js"> </script>
+</html>
